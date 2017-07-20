@@ -23,6 +23,7 @@
 		45B5EC321F20F51D009EB2F5 /* QuestionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5EC311F20F51D009EB2F5 /* QuestionDetailViewController.swift */; };
 		45B5EC341F21002B009EB2F5 /* QuestionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5EC331F21002B009EB2F5 /* QuestionDetailViewModel.swift */; };
 		45FB8DF71F210D2A00D8E36B /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45FB8DF61F210D2A00D8E36B /* Media.xcassets */; };
+		45FB8DFA1F211BBF00D8E36B /* ShareScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB8DF91F211BBF00D8E36B /* ShareScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		45B5EC311F20F51D009EB2F5 /* QuestionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionDetailViewController.swift; path = QuestionDetailScreen/QuestionDetailViewController.swift; sourceTree = "<group>"; };
 		45B5EC331F21002B009EB2F5 /* QuestionDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionDetailViewModel.swift; path = QuestionDetailScreen/QuestionDetailViewModel.swift; sourceTree = "<group>"; };
 		45FB8DF61F210D2A00D8E36B /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = ../Media.xcassets; sourceTree = "<group>"; };
+		45FB8DF91F211BBF00D8E36B /* ShareScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareScreenViewController.swift; path = ShareScreen/ShareScreenViewController.swift; sourceTree = "<group>"; };
 		D9470B57D2DC1B69A3E6DB1C /* Pods-QuestionList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuestionList.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuestionList/Pods-QuestionList.release.xcconfig"; sourceTree = "<group>"; };
 		F0B332CC40DF18C136982DC0 /* Pods_QuestionList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuestionList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -102,6 +104,7 @@
 		45B5EBFB1F1F4EA8009EB2F5 /* QuestionListApp */ = {
 			isa = PBXGroup;
 			children = (
+				45FB8DF81F211B8100D8E36B /* ShareScreen */,
 				45B5EC301F20F4D6009EB2F5 /* QuestionDetailScreen */,
 				45B5EC251F1F7B29009EB2F5 /* Question */,
 				45B5EC221F1F67DA009EB2F5 /* BlissAPI */,
@@ -177,6 +180,14 @@
 				45B5EC331F21002B009EB2F5 /* QuestionDetailViewModel.swift */,
 			);
 			name = QuestionDetailScreen;
+			sourceTree = "<group>";
+		};
+		45FB8DF81F211B8100D8E36B /* ShareScreen */ = {
+			isa = PBXGroup;
+			children = (
+				45FB8DF91F211BBF00D8E36B /* ShareScreenViewController.swift */,
+			);
+			name = ShareScreen;
 			sourceTree = "<group>";
 		};
 		80AB7A4455D4AE366FF48413 /* Pods */ = {
@@ -360,6 +371,7 @@
 				45B5EC321F20F51D009EB2F5 /* QuestionDetailViewController.swift in Sources */,
 				45B5EC2F1F20B633009EB2F5 /* QuestionsListViewModel.swift in Sources */,
 				45B5EBFD1F1F4EA8009EB2F5 /* AppDelegate.swift in Sources */,
+				45FB8DFA1F211BBF00D8E36B /* ShareScreenViewController.swift in Sources */,
 				45B5EC271F1F7B52009EB2F5 /* QuestionModel.swift in Sources */,
 				45B5EC341F21002B009EB2F5 /* QuestionDetailViewModel.swift in Sources */,
 				45B5EC2B1F1FFD8D009EB2F5 /* QuestionListTableViewController.swift in Sources */,

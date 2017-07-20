@@ -11,6 +11,8 @@ import UIKit
 class QuestionDetailViewController: UIViewController {
 
     var question: Question? = nil
+    let apiHelper = APIHelper()
+    
     @IBOutlet weak var questionImage: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
@@ -22,6 +24,7 @@ class QuestionDetailViewController: UIViewController {
     @IBOutlet weak var choice2Button: UIButton!
     @IBOutlet weak var choice3Button: UIButton!
     @IBOutlet weak var choice4Button: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -78,6 +81,11 @@ class QuestionDetailViewController: UIViewController {
         }
         
     }
+    
+    @IBAction func share(_ sender: Any) {
+        self.performSegue(withIdentifier: "GoToshareScreen", sender: self.question)
+    }
+    
     fileprivate func showMessage(title: String, message: String) {
         let alertView = UIAlertController(title: title,
                                           message: message,
@@ -85,14 +93,17 @@ class QuestionDetailViewController: UIViewController {
         alertView.addAction(UIAlertAction(title: "Ok", style: .destructive, handler: nil))
         present(alertView, animated: true, completion: nil)
     }
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "GoToShareScreen" ,
+            let nextScene = segue.destination as? ShareScreenViewController,
+            let id = self.question?.id {
+            nextScene.urlContent = apiHelper.baseURL + "/" + "\(id)"
+        }
+        
     }
-    */
+    
 
 }

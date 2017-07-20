@@ -53,26 +53,21 @@ class APIHelper {
         }
         
     }
-    func getQuestion(byId: Int, completion: @escaping (Question?,APIError?) -> Void) {
+    func share(urlContent:String, email:String,completion: @escaping (Bool,APIError?) -> Void ){
         
-        let request = baseURL + "questions/" + "\(byId)"
-        Alamofire.request(request).responseJSON { response in
+        Alamofire.request(baseURL + "share", method: .post, parameters: ["destination_email": email,"content_url": urlContent ], encoding: URLEncoding.httpBody, headers: nil).responseJSON(completionHandler: { (response) in
             
-            
-            if "\(response.result)" == "SUCCESS"{
-                guard let json = response.result.value as? [String: Any] else{ return }
-                
-                guard let question = Question(json: json) else{return}
-                
-                completion(question,nil)
+            guard let json = response.result.value as? [String: Any] else{ return }
+            guard let status = json["status"] as? String else{return}
+            if status == "OK"{
+                completion(true,nil)
             }else{
-                completion(nil,APIError.RequestFail)
-                
+                completion(false,APIError.RequestFail)
             }
-        }
+
+        })
         
     }
-
     
     
     }

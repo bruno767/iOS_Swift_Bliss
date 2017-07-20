@@ -8,10 +8,11 @@
 
 import UIKit
 
-class QuestionListTableViewController: UITableViewController {
+class QuestionListTableViewController: UIViewController {
 
     let questionsViewModel = QuestionsViewModel()
     
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var filterText: UITextField!
     @IBOutlet weak var activity: UIActivityIndicatorView!
     override func viewDidLoad() {
@@ -26,7 +27,14 @@ class QuestionListTableViewController: UITableViewController {
             self.tableView.reloadData()
         }, failure: nil)
     }
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    @IBAction func filter(_ sender: Any) {
+   
+    }
+    @IBAction func share(_ sender: Any) {
+    
+    
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "GoToQuestionDetail" ,
             let nextScene = segue.destination as? QuestionDetailViewController ,
@@ -39,9 +47,10 @@ class QuestionListTableViewController: UITableViewController {
 }
 
 // MARK: - Table view data source
-extension QuestionListTableViewController {
+extension QuestionListTableViewController:UITableViewDelegate, UITableViewDataSource {
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       
         let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionCell") as? QuestionTableViewCell
         guard let questionCell = cell else {
             return UITableViewCell()
@@ -50,20 +59,24 @@ extension QuestionListTableViewController {
         questionCell.cellModel = self.questionsViewModel.viewModel(at: (indexPath as NSIndexPath).row)
         self.activity.stopAnimating()
         return questionCell
+        
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.questionsViewModel.questionsCount
     }
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "GoToQuestionDetail", sender: indexPath)
     }
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == self.questionsViewModel.questionsCount - 1 {
             self.activity.startAnimating()
             self.questionsViewModel.addPage()
