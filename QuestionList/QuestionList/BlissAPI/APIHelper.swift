@@ -16,7 +16,6 @@ enum APIError : Error{
 class APIHelper {
     var baseURL = "https://private-bbbe9-blissrecruitmentapi.apiary-mock.com/"
     
-    
     func isHealth(completion: @escaping (Bool,APIError?) -> Void)  {
         
         let request = baseURL + "health"
@@ -32,7 +31,7 @@ class APIHelper {
             
             }
         }
-    func getQuestions(limit: Int, offset: Int, filter: String, completion: @escaping ([Question],APIError?) -> Void) {
+    func getQuestions(limit: Int, offset: Int, filter: String, completion: @escaping ([Question]?,APIError?) -> Void) {
         
         let request = baseURL + "questions?limit=" + "\(limit)" + "&offset=" + "\(offset)" + "&filter=" + filter
         var questions: [Question] = []
@@ -47,11 +46,26 @@ class APIHelper {
                 }
                 completion(questions,nil)
             }else{
-                completion([Question](),APIError.RequestFail)
-                
+                completion(nil,APIError.RequestFail)
             }
         }
+    }
+    
+    func getQuestionByID(id: Int, completion: @escaping (Question?,APIError?) -> Void) {
         
+        let request = baseURL + "questions/" + "\(id)"
+        
+        Alamofire.request(request).responseJSON { response in
+            if "\(response.result)" == "SUCCESS"{
+                guard let json = response.result.value as? [String: Any] else{ return }
+                
+                guard let question = Question(json: json) else{return}
+                
+                completion(question,nil)
+            }else{
+                completion(nil,APIError.RequestFail)
+            }
+        }
     }
     func share(urlContent:String, email:String,completion: @escaping (Bool,APIError?) -> Void ){
         

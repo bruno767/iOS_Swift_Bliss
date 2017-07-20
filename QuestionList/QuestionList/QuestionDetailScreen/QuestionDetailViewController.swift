@@ -11,6 +11,7 @@ import UIKit
 class QuestionDetailViewController: UIViewController {
 
     var question: Question? = nil
+    var id = 0
     let apiHelper = APIHelper()
     
     @IBOutlet weak var questionImage: UIImageView!
@@ -27,8 +28,15 @@ class QuestionDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.updateUI()
+        self.getData()
+    }
+    
+    func getData(){
+        self.apiHelper.getQuestionByID(id: id) { (questionResp, error) in
+            guard let q = questionResp else{return}
+            self.question = q
+            self.updateUI()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,16 +94,7 @@ class QuestionDetailViewController: UIViewController {
         self.performSegue(withIdentifier: "GoToshareScreen", sender: self.question)
     }
     
-    fileprivate func showMessage(title: String, message: String) {
-        let alertView = UIAlertController(title: title,
-                                          message: message,
-                                          preferredStyle: .alert)
-        alertView.addAction(UIAlertAction(title: "Ok", style: .destructive, handler: nil))
-        present(alertView, animated: true, completion: nil)
-    }
-    
     // MARK: - Navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "GoToShareScreen" ,
             let nextScene = segue.destination as? ShareScreenViewController,

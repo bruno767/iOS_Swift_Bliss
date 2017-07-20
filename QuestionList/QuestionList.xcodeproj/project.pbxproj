@@ -21,7 +21,6 @@
 		45B5EC2D1F20B1FD009EB2F5 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5EC2C1F20B1FD009EB2F5 /* QuestionTableViewCell.swift */; };
 		45B5EC2F1F20B633009EB2F5 /* QuestionsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5EC2E1F20B633009EB2F5 /* QuestionsListViewModel.swift */; };
 		45B5EC321F20F51D009EB2F5 /* QuestionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5EC311F20F51D009EB2F5 /* QuestionDetailViewController.swift */; };
-		45B5EC341F21002B009EB2F5 /* QuestionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5EC331F21002B009EB2F5 /* QuestionDetailViewModel.swift */; };
 		45FB8DF71F210D2A00D8E36B /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45FB8DF61F210D2A00D8E36B /* Media.xcassets */; };
 		45FB8DFA1F211BBF00D8E36B /* ShareScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB8DF91F211BBF00D8E36B /* ShareScreenViewController.swift */; };
 /* End PBXBuildFile section */
@@ -55,7 +54,6 @@
 		45B5EC2C1F20B1FD009EB2F5 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionTableViewCell.swift; path = QuestionsList/QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		45B5EC2E1F20B633009EB2F5 /* QuestionsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionsListViewModel.swift; path = QuestionsList/QuestionsListViewModel.swift; sourceTree = "<group>"; };
 		45B5EC311F20F51D009EB2F5 /* QuestionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionDetailViewController.swift; path = QuestionDetailScreen/QuestionDetailViewController.swift; sourceTree = "<group>"; };
-		45B5EC331F21002B009EB2F5 /* QuestionDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionDetailViewModel.swift; path = QuestionDetailScreen/QuestionDetailViewModel.swift; sourceTree = "<group>"; };
 		45FB8DF61F210D2A00D8E36B /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = ../Media.xcassets; sourceTree = "<group>"; };
 		45FB8DF91F211BBF00D8E36B /* ShareScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareScreenViewController.swift; path = ShareScreen/ShareScreenViewController.swift; sourceTree = "<group>"; };
 		D9470B57D2DC1B69A3E6DB1C /* Pods-QuestionList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuestionList.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuestionList/Pods-QuestionList.release.xcconfig"; sourceTree = "<group>"; };
@@ -177,7 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				45B5EC311F20F51D009EB2F5 /* QuestionDetailViewController.swift */,
-				45B5EC331F21002B009EB2F5 /* QuestionDetailViewModel.swift */,
 			);
 			name = QuestionDetailScreen;
 			sourceTree = "<group>";
@@ -373,7 +370,6 @@
 				45B5EBFD1F1F4EA8009EB2F5 /* AppDelegate.swift in Sources */,
 				45FB8DFA1F211BBF00D8E36B /* ShareScreenViewController.swift in Sources */,
 				45B5EC271F1F7B52009EB2F5 /* QuestionModel.swift in Sources */,
-				45B5EC341F21002B009EB2F5 /* QuestionDetailViewModel.swift in Sources */,
 				45B5EC2B1F1FFD8D009EB2F5 /* QuestionListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

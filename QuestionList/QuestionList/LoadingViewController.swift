@@ -26,14 +26,27 @@ class LoadingViewController: UIViewController {
             self.performSegue(withIdentifier: "GoToQuestionsList", sender: nil)
             self.activity.stopAnimating()
         }
-        
-//        apiHelper.getQuestion(byId: 2) { (question, error) in
-//            guard let q = question else{return}
-//            print(q)
-//        }
+    }
+
+
+}
+extension UIViewController {
+    func showAlertMessage(titleStr:String, messageStr:String) {
+        let alert = UIAlertController(title: titleStr, message: messageStr, preferredStyle: UIAlertControllerStyle.alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(OKAction)
+        self.present(alert, animated: true, completion: nil)
     }
     
-
-
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
 }
 
