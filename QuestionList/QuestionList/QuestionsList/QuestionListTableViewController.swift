@@ -26,6 +26,15 @@ class QuestionListTableViewController: UITableViewController {
             self.tableView.reloadData()
         }, failure: nil)
     }
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GoToQuestionDetail" ,
+            let nextScene = segue.destination as? QuestionDetailViewController ,
+            let indexPath = sender as? IndexPath {
+            let selectedQuestion = questionsViewModel.viewModel(at: indexPath.row)
+            nextScene.question = selectedQuestion
+        }
+    }
 
 }
 
@@ -51,7 +60,9 @@ extension QuestionListTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.questionsViewModel.questionsCount
     }
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "GoToQuestionDetail", sender: indexPath)
+    }
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == self.questionsViewModel.questionsCount - 1 {
             self.activity.startAnimating()
