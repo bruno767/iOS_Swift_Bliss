@@ -34,11 +34,9 @@ class APIHelper {
         }
     func getQuestions(limit: Int, offset: Int, filter: String, completion: @escaping ([Question],APIError?) -> Void) {
         
-        let request = baseURL + "questions?" + "\(limit)" + "&" + "\(offset)" + "&" + filter
+        let request = baseURL + "questions?limit=" + "\(limit)" + "&offset=" + "\(offset)" + "&filter=" + filter
         var questions: [Question] = []
         Alamofire.request(request).responseJSON { response in
-            
-            
             if "\(response.result)" == "SUCCESS"{
                 guard let json = response.result.value as? [[String: Any]] else{ return }
                 

@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QuestionList/QuestionsList/QuestionListTableViewController.swift"
-            timestampString = "522195734.537329"
+            filePath = "QuestionList/QuestionsList/QuestionsListViewModel.swift"
+            timestampString = "522252514.026446"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "scrollViewDidEndDragging(scrollView:willDecelerate:)"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "addPage()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
