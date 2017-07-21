@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		05297E20673E6E4C91DF4393 /* Pods_QuestionList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0B332CC40DF18C136982DC0 /* Pods_QuestionList.framework */; };
+		458951061F223F4400AC0182 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458951051F223F4400AC0182 /* LoadingViewController.swift */; };
 		45B5EBFD1F1F4EA8009EB2F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5EBFC1F1F4EA8009EB2F5 /* AppDelegate.swift */; };
-		45B5EBFF1F1F4EA8009EB2F5 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5EBFE1F1F4EA8009EB2F5 /* LoadingViewController.swift */; };
 		45B5EC021F1F4EA8009EB2F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B5EC001F1F4EA8009EB2F5 /* Main.storyboard */; };
 		45B5EC051F1F4EA8009EB2F5 /* QuestionList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45B5EC031F1F4EA8009EB2F5 /* QuestionList.xcdatamodeld */; };
 		45B5EC0A1F1F4EA8009EB2F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B5EC081F1F4EA8009EB2F5 /* LaunchScreen.storyboard */; };
@@ -41,9 +41,9 @@
 
 /* Begin PBXFileReference section */
 		04FB772296173C35ACA3A6E6 /* Pods-QuestionList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuestionList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuestionList/Pods-QuestionList.debug.xcconfig"; sourceTree = "<group>"; };
+		458951051F223F4400AC0182 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingViewController.swift; path = LoadingView/LoadingViewController.swift; sourceTree = "<group>"; };
 		45B5EBF91F1F4EA8009EB2F5 /* QuestionList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuestionList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B5EBFC1F1F4EA8009EB2F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		45B5EBFE1F1F4EA8009EB2F5 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		45B5EC011F1F4EA8009EB2F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45B5EC041F1F4EA8009EB2F5 /* QuestionList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QuestionList.xcdatamodel; sourceTree = "<group>"; };
 		45B5EC091F1F4EA8009EB2F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 		45B5EC201F1F5233009EB2F5 /* Loading */ = {
 			isa = PBXGroup;
 			children = (
-				45B5EBFE1F1F4EA8009EB2F5 /* LoadingViewController.swift */,
+				458951051F223F4400AC0182 /* LoadingViewController.swift */,
 			);
 			name = Loading;
 			sourceTree = "<group>";
@@ -390,10 +390,10 @@
 			files = (
 				45B5EC291F1FE350009EB2F5 /* Choice.swift in Sources */,
 				45B5EC2D1F20B1FD009EB2F5 /* QuestionTableViewCell.swift in Sources */,
+				458951061F223F4400AC0182 /* LoadingViewController.swift in Sources */,
 				45F2936B1F2177A50058B675 /* Reachability.swift in Sources */,
 				45F2936D1F217B820058B675 /* ViewControllerExtensions.swift in Sources */,
 				45B5EC241F1F6823009EB2F5 /* APIHelper.swift in Sources */,
-				45B5EBFF1F1F4EA8009EB2F5 /* LoadingViewController.swift in Sources */,
 				45F2936F1F2207790058B675 /* MyGlobalTimer.swift in Sources */,
 				45B5EC051F1F4EA8009EB2F5 /* QuestionList.xcdatamodeld in Sources */,
 				45B5EC321F20F51D009EB2F5 /* QuestionDetailViewController.swift in Sources */,
