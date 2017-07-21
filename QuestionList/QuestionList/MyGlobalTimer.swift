@@ -38,15 +38,14 @@ class TimerModel: NSObject {
     
     @available(iOS 10.0, *)
     func isConnected(sender: Any?){
-        guard let s = sender else {return}
-        debugPrint(s)
+        
         if Reachability.isConnectedToNetwork(){
-            print("Internet Connection Available!")
+            debugPrint("Internet Connection Available!")
             if isAlertView {
                 self.dismissLoading()
             }
         }else{
-            print("Internet Connection not Available!")
+            debugPrint("Internet Connection not Available!")
             self.showLoading()
         }
     }
