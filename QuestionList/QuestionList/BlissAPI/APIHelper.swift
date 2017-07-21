@@ -29,8 +29,8 @@ class APIHelper {
                 completion(false,APIError.RequestFail)
             }
             
-            }
         }
+    }
     func getQuestions(limit: Int, offset: Int, filter: String, completion: @escaping ([Question]?,APIError?) -> Void) {
         
         let request = baseURL + "questions?limit=" + "\(limit)" + "&offset=" + "\(offset)" + "&filter=" + filter
@@ -83,6 +83,21 @@ class APIHelper {
         
     }
     
+    func updateQuestion(id: Int, parameters: [String: Any], completion: @escaping (Question?,APIError?) -> Void){
+        
+        Alamofire.request(baseURL + "questions/" + "\(id)", method: .put, parameters: parameters, encoding: URLEncoding.httpBody, headers: nil).responseJSON(completionHandler: { (response) in
+            if "\(response.result)" == "SUCCESS"{
+                guard let json = response.result.value as? [String: Any] else{ return }
+                
+                guard let question = Question(json: json) else{return}
+                
+                completion(question,nil)
+            }else{
+                completion(nil,APIError.RequestFail)
+            }            
+        })
+        
+    }
     
     }
     

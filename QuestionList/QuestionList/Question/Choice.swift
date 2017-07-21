@@ -11,6 +11,10 @@ import Foundation
 struct Choice {
     var choice: String
     var votes: Int
+    var choiceJSON: [String:Any] {
+        return ["choice": choice,
+                "votes": votes]
+    }
     
 }
 extension Choice{

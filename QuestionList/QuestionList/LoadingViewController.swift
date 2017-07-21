@@ -20,7 +20,14 @@ class LoadingViewController: UIViewController {
         super.viewDidLoad()    
   
         self.activity.startAnimating()
-
+        
+        if #available(iOS 10.0, *) {
+            self.startTestConnection()
+        } else {
+            // Fallback on earlier versions
+        }
+        
+        
         self.statusLabel.text = "Checking connection.."
         apiHelper.isHealth { (status,error) in
             self.performSegue(withIdentifier: "GoToQuestionsList", sender: nil)
@@ -28,25 +35,4 @@ class LoadingViewController: UIViewController {
         }
     }
 
-
 }
-extension UIViewController {
-    func showAlertMessage(titleStr:String, messageStr:String) {
-        let alert = UIAlertController(title: titleStr, message: messageStr, preferredStyle: UIAlertControllerStyle.alert)
-        let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alert.addAction(OKAction)
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-    
-    func dismissKeyboard() {
-        view.endEditing(true)
-    }
-    
-}
-

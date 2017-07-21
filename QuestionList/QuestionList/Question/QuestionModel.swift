@@ -13,9 +13,19 @@ struct Question {
     let question: String
     let image_url: String
     let thumb_url: String
+    let published_at: String
     let date: String
-    let choices: [Choice]
-
+    var choices: [Choice]
+    var choiceJSON : [[String:Any]]
+   
+    var questionJSON: [String: Any]{
+        return ["id": id,
+                "question": question,
+                "image_url": image_url,
+                "thumb_url": thumb_url,
+                "published_at": published_at,
+                "choices": choiceJSON]
+    }
    
 }
 
@@ -26,17 +36,20 @@ extension Question{
             let image_url = json["image_url"] as? String,
             let thumb_url = json["thumb_url"] as? String,
             let date = json["published_at"] as? String,
-            let choiecesJSON = json["choices"] as? [[String: Any]]
+            let choicesJSON = json["choices"] as? [[String: Any]]
             else {
                 return nil
         }
-        
+        self.published_at = date
+        self.choiceJSON = [[String:Any]]()
         var choices: [Choice] = []
         
-        for value in choiecesJSON{
+        for value in choicesJSON{
             guard let choice = Choice(json: value)else{ return nil}
+                self.choiceJSON.append(choice.choiceJSON)
                 choices.append(choice)
         }
+        
         
         let dateFormatter = DateFormatter()
         let tempLocale = dateFormatter.locale // save locale temporarily

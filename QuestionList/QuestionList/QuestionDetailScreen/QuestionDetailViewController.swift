@@ -75,6 +75,34 @@ class QuestionDetailViewController: UIViewController {
         
     }
     
+    @IBAction func vote(_ sender: UIButton) {
+        switch sender {
+        case self.choice1Button:
+            self.question?.choices[0].votes += 1
+        case self.choice2Button:
+            self.question?.choices[1].votes += 1
+        case self.choice3Button:
+            self.question?.choices[2].votes += 1
+        case self.choice4Button:
+            self.question?.choices[3].votes += 1
+        default:
+            break
+        }
+        guard let id = question?.id, let json = question?.questionJSON else{return}
+        
+        apiHelper.updateQuestion(id: id, parameters: json) { (question, error) in
+            if let q = question{
+                self.question = q
+                self.updateUI()
+                self.showAlertMessage(titleStr: "Thank you!", messageStr: "We appreciate your vote.")
+            }else{
+                self.showAlertMessage(titleStr: "Error", messageStr: "There is no conection, try again later.")
+            }
+        }
+        
+    }
+    
+    
     fileprivate func fetchImageFromURL(){
     
         guard let imageURL = self.question?.image_url else {return}

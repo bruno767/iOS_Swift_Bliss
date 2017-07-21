@@ -21,6 +21,10 @@
 		45B5EC2D1F20B1FD009EB2F5 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5EC2C1F20B1FD009EB2F5 /* QuestionTableViewCell.swift */; };
 		45B5EC2F1F20B633009EB2F5 /* QuestionsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5EC2E1F20B633009EB2F5 /* QuestionsListViewModel.swift */; };
 		45B5EC321F20F51D009EB2F5 /* QuestionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5EC311F20F51D009EB2F5 /* QuestionDetailViewController.swift */; };
+		45F2936B1F2177A50058B675 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F2936A1F2177A50058B675 /* Reachability.swift */; };
+		45F2936D1F217B820058B675 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F2936C1F217B820058B675 /* ViewControllerExtensions.swift */; };
+		45F2936F1F2207790058B675 /* MyGlobalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F2936E1F2207790058B675 /* MyGlobalTimer.swift */; };
+		45F293721F2222AC0058B675 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F293711F2222AC0058B675 /* AlertViewController.swift */; };
 		45FB8DF71F210D2A00D8E36B /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45FB8DF61F210D2A00D8E36B /* Media.xcassets */; };
 		45FB8DFA1F211BBF00D8E36B /* ShareScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FB8DF91F211BBF00D8E36B /* ShareScreenViewController.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +58,10 @@
 		45B5EC2C1F20B1FD009EB2F5 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionTableViewCell.swift; path = QuestionsList/QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		45B5EC2E1F20B633009EB2F5 /* QuestionsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionsListViewModel.swift; path = QuestionsList/QuestionsListViewModel.swift; sourceTree = "<group>"; };
 		45B5EC311F20F51D009EB2F5 /* QuestionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionDetailViewController.swift; path = QuestionDetailScreen/QuestionDetailViewController.swift; sourceTree = "<group>"; };
+		45F2936A1F2177A50058B675 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		45F2936C1F217B820058B675 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
+		45F2936E1F2207790058B675 /* MyGlobalTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGlobalTimer.swift; sourceTree = "<group>"; };
+		45F293711F2222AC0058B675 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertViewController.swift; path = CoonectionAlertView/AlertViewController.swift; sourceTree = "<group>"; };
 		45FB8DF61F210D2A00D8E36B /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = ../Media.xcassets; sourceTree = "<group>"; };
 		45FB8DF91F211BBF00D8E36B /* ShareScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareScreenViewController.swift; path = ShareScreen/ShareScreenViewController.swift; sourceTree = "<group>"; };
 		D9470B57D2DC1B69A3E6DB1C /* Pods-QuestionList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuestionList.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuestionList/Pods-QuestionList.release.xcconfig"; sourceTree = "<group>"; };
@@ -102,10 +110,12 @@
 		45B5EBFB1F1F4EA8009EB2F5 /* QuestionListApp */ = {
 			isa = PBXGroup;
 			children = (
+				45F293701F2222730058B675 /* ConnectionAlertView */,
+				45F293691F2177550058B675 /* ExtraLibs */,
+				45B5EC221F1F67DA009EB2F5 /* BlissAPI */,
+				45B5EC251F1F7B29009EB2F5 /* Question */,
 				45FB8DF81F211B8100D8E36B /* ShareScreen */,
 				45B5EC301F20F4D6009EB2F5 /* QuestionDetailScreen */,
-				45B5EC251F1F7B29009EB2F5 /* Question */,
-				45B5EC221F1F67DA009EB2F5 /* BlissAPI */,
 				45B5EC211F1F5253009EB2F5 /* QuestionsList */,
 				45B5EC201F1F5233009EB2F5 /* Loading */,
 				45B5EC001F1F4EA8009EB2F5 /* Main.storyboard */,
@@ -132,6 +142,7 @@
 				45B5EC081F1F4EA8009EB2F5 /* LaunchScreen.storyboard */,
 				45B5EC0B1F1F4EA8009EB2F5 /* Info.plist */,
 				45B5EC031F1F4EA8009EB2F5 /* QuestionList.xcdatamodeld */,
+				45F2936C1F217B820058B675 /* ViewControllerExtensions.swift */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -177,6 +188,23 @@
 				45B5EC311F20F51D009EB2F5 /* QuestionDetailViewController.swift */,
 			);
 			name = QuestionDetailScreen;
+			sourceTree = "<group>";
+		};
+		45F293691F2177550058B675 /* ExtraLibs */ = {
+			isa = PBXGroup;
+			children = (
+				45F2936A1F2177A50058B675 /* Reachability.swift */,
+				45F2936E1F2207790058B675 /* MyGlobalTimer.swift */,
+			);
+			name = ExtraLibs;
+			sourceTree = "<group>";
+		};
+		45F293701F2222730058B675 /* ConnectionAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				45F293711F2222AC0058B675 /* AlertViewController.swift */,
+			);
+			name = ConnectionAlertView;
 			sourceTree = "<group>";
 		};
 		45FB8DF81F211B8100D8E36B /* ShareScreen */ = {
@@ -362,14 +390,18 @@
 			files = (
 				45B5EC291F1FE350009EB2F5 /* Choice.swift in Sources */,
 				45B5EC2D1F20B1FD009EB2F5 /* QuestionTableViewCell.swift in Sources */,
+				45F2936B1F2177A50058B675 /* Reachability.swift in Sources */,
+				45F2936D1F217B820058B675 /* ViewControllerExtensions.swift in Sources */,
 				45B5EC241F1F6823009EB2F5 /* APIHelper.swift in Sources */,
 				45B5EBFF1F1F4EA8009EB2F5 /* LoadingViewController.swift in Sources */,
+				45F2936F1F2207790058B675 /* MyGlobalTimer.swift in Sources */,
 				45B5EC051F1F4EA8009EB2F5 /* QuestionList.xcdatamodeld in Sources */,
 				45B5EC321F20F51D009EB2F5 /* QuestionDetailViewController.swift in Sources */,
 				45B5EC2F1F20B633009EB2F5 /* QuestionsListViewModel.swift in Sources */,
 				45B5EBFD1F1F4EA8009EB2F5 /* AppDelegate.swift in Sources */,
 				45FB8DFA1F211BBF00D8E36B /* ShareScreenViewController.swift in Sources */,
 				45B5EC271F1F7B52009EB2F5 /* QuestionModel.swift in Sources */,
+				45F293721F2222AC0058B675 /* AlertViewController.swift in Sources */,
 				45B5EC2B1F1FFD8D009EB2F5 /* QuestionListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
